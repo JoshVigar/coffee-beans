@@ -14,8 +14,6 @@ mongoose.connect(process.env.DB_NAME, { useNewUrlParser: true, useUnifiedTopolog
     `app connected to ${process.env.DB_NAME}`
   });
 
-// CoffeePot.deleteMany({}, () => {})
-
 // TODO move into a helper
 const brewCoffee = () => {
   // check if pots exist
