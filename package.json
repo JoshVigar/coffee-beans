@@ -1,0 +1,29 @@
+{
+  "name": "coffee-beans",
+  "version": "1.0.0",
+  "description": "an opt in coffee break app",
+  "main": "listen.js",
+  "scripts": {
+    "dev": "nodemon listen.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshVigar/coffee-beans.git"
+  },
+  "keywords": [
+    "coffee",
+    "beans"
+  ],
+  "author": "Liz Ardolino, Josh Vigar, Jamie Winchester",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoshVigar/coffee-beans/issues"
+  },
+  "homepage": "https://github.com/JoshVigar/coffee-beans#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7",
+    "nodemon": "^2.0.7"
+  }
+}
