@@ -4,16 +4,14 @@ mongoose.Promise = Promise;
 const router = require('./routes/router');
 const CoffeePot = require('./api/models/coffee-pot');
 
-const DB_NAME = 'mongodb://localhost:27017/coffee';
-
 const app = express();
 
 app.use(express.json()); //Used to parse JSON bodies
 app.use(express.urlencoded()); //Parse URL-encoded bodies
 
-mongoose.connect(DB_NAME, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DB_NAME, { useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
-    `app connected to ${DB_NAME}`
+    `app connected to ${process.env.DB_NAME}`
   });
 
 // CoffeePot.deleteMany({}, () => {})
