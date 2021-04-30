@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 mongoose.Promise = Promise;
 const router = require('./routes/router');
+const CoffeePot = require('./api/models/coffee-pot');
 
 const DB_NAME = 'mongodb://localhost:27017/coffee';
 
@@ -14,6 +15,22 @@ mongoose.connect(DB_NAME, { useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
     `app connected to ${DB_NAME}`
   });
+
+// CoffeePot.deleteMany({}, () => {})
+
+// TODO move into a helper
+const brewCoffee = () => {
+  // check if pots exist
+  const allPots = CoffeePot.find()
+    .then(pots => { 
+      // create a pot
+      if (pots.length < 1){
+        const newPot = new CoffeePot
+        newPot.save()
+      }
+    });
+};
+brewCoffee();
 
 app.use('/api', router);
 
