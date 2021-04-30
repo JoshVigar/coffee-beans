@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { index } = require('../api/controllers/coffee-controller');
+const { addToPot } = require('../api/controllers/coffee-controller');
 
-router.post('/', index);
+router.post('/', addToPot);
 
 module.exports = router;
